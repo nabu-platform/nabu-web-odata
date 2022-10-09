@@ -1,0 +1,10 @@
+<structure interface="be.nabu.eai.module.services.crud.api.CRUDProvider.delete" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <field minOccurs="0" name="serviceId" type="java.lang.String"/>
+    <structure definition="nabu.web.odata.providers.crud.configuration" name="configuration"/>
+    <structure definition="java.lang.Object" minOccurs="0" name="serviceInput"/>
+    <structure definition="java.lang.Object" minOccurs="0" name="serviceOutput"/>
+    <field minOccurs="0" name="entitySetName" type="java.lang.String"/>
+    <structure definition="nabu.utils.types.ParameterDescription" minOccurs="0" name="primaryKey"/>
+</structure>

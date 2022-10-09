@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.crud.provider.CRUDProviderManager" created="2020-02-09T16:12:08.558+01:00" lastModified="2022-10-09T10:52:03.335+02:00" leaf="true" version="25">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.web.odata.providers.crud.configuration</references>
+    <references>nabu.web.odata.providers.crud.create</references>
+    <references>nabu.web.odata.providers.crud.delete</references>
+    <references>nabu.web.odata.providers.crud.list</references>
+    <references>nabu.web.odata.providers.crud.update</references>
+</node>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-10-09T10:15:21.360+02:00" lastModified="2022-10-09T11:49:57.536+02:00" leaf="true" version="13">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>be.nabu.eai.module.services.crud.provider.CRUDMeta</references>
+    <references>nabu.web.odata.providers.crud.configuration</references>
+    <references>nabu.utils.reflection.Type.newInstance</references>
+    <references>be.nabu.eai.module.services.crud.api.CRUDProvider.update</references>
+    <references>nabu.utils.String.replace</references>
+    <references>nabu.utils.reflection.Service.invoke</references>
+    <references>nabu.utils.types.ParameterDescription</references>
+    <references>java.lang.Object</references>
+    <references>java.lang.String</references>
+    <references>nabu.utils.reflection.Type.set</references>
+    <references>nabu.utils.reflection.Type.describe</references>
+    <references>nabu.utils.reflection.Type.get</references>
+</node>

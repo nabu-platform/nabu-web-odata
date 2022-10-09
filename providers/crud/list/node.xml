@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-10-09T10:15:05.174+02:00" lastModified="2022-10-09T11:34:23.977+02:00" leaf="true" version="23">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>be.nabu.eai.module.services.crud.provider.CRUDMeta</references>
+    <references>nabu.utils.Object.mapByKey</references>
+    <references>be.nabu.eai.module.services.crud.CRUDService$TotalCount</references>
+    <references>be.nabu.eai.module.services.crud.CRUDFilter</references>
+    <references>nabu.utils.reflection.Service.invoke</references>
+    <references>nabu.utils.reflection.Type.set</references>
+    <references>be.nabu.eai.module.services.crud.api.CRUDProvider.list</references>
+    <references>java.lang.Integer</references>
+    <references>nabu.web.odata.providers.crud.configuration</references>
+    <references>nabu.utils.reflection.Type.newInstance</references>
+    <references>be.nabu.eai.module.services.crud.ListResult</references>
+    <references>nabu.utils.String.replace</references>
+    <references>java.lang.Long</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.Object</references>
+    <references>java.lang.String</references>
+    <references>nabu.utils.reflection.Type.get</references>
+</node>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<crudProvider>
+    <configurationType>nabu.web.odata.providers.crud.configuration</configurationType>
+    <createService>nabu.web.odata.providers.crud.create</createService>
+    <deleteService>nabu.web.odata.providers.crud.delete</deleteService>
+    <listService>nabu.web.odata.providers.crud.list</listService>
+    <primaryKeySecurityContext>false</primaryKeySecurityContext>
+    <updateService>nabu.web.odata.providers.crud.update</updateService>
+</crudProvider>
