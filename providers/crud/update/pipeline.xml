@@ -7,4 +7,5 @@
     <structure definition="java.lang.Object" minOccurs="0" name="serviceOutput"/>
     <field minOccurs="0" name="entitySetName" type="java.lang.String"/>
     <structure definition="nabu.utils.types.ParameterDescription" minOccurs="0" name="primaryKey"/>
+    <structure definition="nabu.utils.types.ParameterDescription" minOccurs="0" name="updateType"/>
 </structure>

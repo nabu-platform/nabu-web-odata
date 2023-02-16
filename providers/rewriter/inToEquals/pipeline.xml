@@ -1,0 +1,7 @@
+<structure interface="be.nabu.eai.module.odata.client.api.ODataRequestRewriter.rewrite" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="values" type="java.lang.String"/>
+    <field minOccurs="0" name="formatted" type="java.lang.String"/>
+    <field minOccurs="0" name="key" type="java.lang.String"/>
+</structure>

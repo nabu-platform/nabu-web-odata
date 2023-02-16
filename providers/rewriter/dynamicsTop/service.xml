@@ -1,0 +1,203 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="92b85b9d-2a1e-43cc-af3c-1cfc2ffa9d2d"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+			comment="If we have a skip, we have to rewrite it, it doesn't work"
+			disabled="false"
+			id="f8ecbf42-bdfc-4a33-8b9e-36b52aceff11"
+			label="input/request/target ~ &quot;.*\?.*\$top=.*&quot;"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Get the top amount"
+				disabled="false"
+				id="a4131bdf-9f25-4be4-9c50-4371a35eba3c"
+				lineNumber="3">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="c1dcb903-62f5-4b3b-9edc-ece3f02db0d5"
+					serviceId="nabu.utils.String.replace"
+					resultName="result65ae27bc3627479aad8bdbf125c2f2ac"
+					temporaryMapping="true"
+					x="20"
+					y="177"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="ed18d9f3-51f4-475c-82e3-ffa73babaced"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/request/target</from>
+					<to>content</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4fae57ea-56bc-435f-99d4-9ff799a855d9"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>.*\?.*\$top=([0-9]+).*</from>
+					<to>match</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="04aedfe4-7602-42db-89db-dfcfe71c2db8"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>$1</from>
+					<to>replace</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="1d90fe66-024f-4dc7-8cfd-dfa64031d169"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>true</from>
+					<to>useRegex</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e8877cc1-0a21-4f5f-932d-b9fae2b6fd08"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result65ae27bc3627479aad8bdbf125c2f2ac/content</from>
+				<to>topAmount</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="78b6ea63-4437-4416-9339-65650f8c5825"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="0bdce96d-7546-4d6e-a876-80ef6fc7a456"
+					serviceId="nabu.utils.String.replace"
+					resultName="resultb830e4592dab4d089cd411663541f04b"
+					temporaryMapping="true"
+					x="38"
+					y="80"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="b0698e00-5b96-4c91-b80c-6999b2fa2cd1"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/request/target</from>
+					<to>content</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="c81485c0-ac59-417c-8b8a-54192894c48b"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>(.*\?.*)\$top=[0-9&amp;]+(.*)</from>
+					<to>match</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="f996025d-7f3c-4ede-9b10-c43e072e5e7e"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>true</from>
+					<to>useRegex</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="17f6b62a-78c4-4eff-8089-d31e6beaab69"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>$1$2</from>
+					<to>replace</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c364970f-f961-45b1-914f-ab89dc9add02"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultb830e4592dab4d089cd411663541f04b/content</from>
+				<to>input/request/target</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Set the Prefer header, otherwise we don't get a nextlink"
+				disabled="false"
+				id="c1019add-3bb4-4b90-9325-dee381043fba"
+				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="1bd32038-d701-4e11-b8ce-3c57447cbbb9"
+					serviceId="nabu.data.mime.Services.setHeader"
+					resultName="result19874ad5bc9946969194e1e0f6953eb3"
+					temporaryMapping="true"
+					x="666"
+					y="115"
+					invocationOrder="1"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="afa09197-053b-4973-b7c2-f05929680859"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/request/content</from>
+					<to>part</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="093c7013-08fb-4eee-b130-8b63205c4a09"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>resultb7611240d93d44c98d9d01bb82a5ce93/header</from>
+					<to>headers[0]</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="a85707a2-be58-4c72-9bcb-a6dd30f107f3"
+					serviceId="nabu.data.mime.Services.newHeader"
+					resultName="resultb7611240d93d44c98d9d01bb82a5ce93"
+					temporaryMapping="true"
+					x="132"
+					y="176"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="51df6ddf-0e52-4f8f-8c75-cae88d7f14aa"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>Prefer</from>
+					<to>name</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="3ce7bf81-d701-4241-820b-f41cae3166c1"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>="odata.maxpagesize=" + topAmount</from>
+					<to>value</to>
+				</steps>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

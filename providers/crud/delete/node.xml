@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-10-09T10:15:32.458+02:00" lastModified="2022-10-09T11:57:30.845+02:00" leaf="true" version="7">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-10-09T10:15:32.458+02:00" lastModified="2022-10-14T10:51:30.514+02:00" leaf="true" version="8">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
     <references>be.nabu.eai.module.services.crud.provider.CRUDMeta</references>
     <references>nabu.web.odata.providers.crud.configuration</references>
+    <references>nabu.web.odata.providers.crud.guessEntitySet</references>
     <references>nabu.utils.reflection.Type.newInstance</references>
     <references>nabu.utils.String.replace</references>
     <references>nabu.utils.reflection.Service.invoke</references>

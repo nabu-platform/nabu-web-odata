@@ -1,0 +1,7 @@
+In dynamics $top works but when used it does not return a nextlink value.
+You need to set a prefer header with the odata.maxpagesize: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api#limits-on-number-of-table-rows-entities-returned
+
+You can not combine this with the $top parameter because the $top param will win and still not return a nextlink value.
+If you only send the header parameter however, we get a nextlink.
+
+This doesn't change the max page size though, it just gives you access to the next page, so we still don't know how many records there actually are.

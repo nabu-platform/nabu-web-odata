@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-10-12T13:15:31.899+02:00" lastModified="2023-02-08T16:53:37.232+01:00" leaf="true" version="5">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>be.nabu.libs.http.api.HTTPRequest</references>
+    <references>be.nabu.eai.module.odata.client.api.ODataRequestRewriter.rewrite</references>
+    <references>nabu.web.odata.providers.rewriter.dynamicsTop</references>
+    <references>java.lang.String</references>
+    <references>nabu.web.odata.providers.rewriter.inToEquals</references>
+    <references>nabu.web.odata.providers.rewriter.dynamicsSkip</references>
+</node>

@@ -1,0 +1,104 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="eeef299c-ad0e-42b6-a8de-c5fcfd0b0b9f"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="04601be2-01a2-4ade-903c-70f711b3d3f5"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="ffdfa669-8e35-489e-a811-b1d799f7eb21"
+				serviceId="nabu.utils.reflection.Type.details"
+				resultName="result745da5bed2794b068cc7d329cbecda3c"
+				temporaryMapping="true"
+				x="94"
+				y="66"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="929a8636-da49-449c-82ee-df87acf3f16b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/typeId</from>
+				<to>typeId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="565e735d-9179-4cd3-86a2-334b1394a5eb"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result745da5bed2794b068cc7d329cbecda3c/description/collectionName</from>
+			<to>output/entitySet</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Guess from type"
+			disabled="false"
+			id="7100dfa6-511b-4348-aa1f-e32ed809bdb6"
+			label="output/entitySet == null"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="9566a5d4-f1fc-4b4b-aa73-22501e00f01e"
+				serviceId="nabu.utils.String.replace"
+				resultName="result0eca02b57b3641259fda7da68b881273"
+				temporaryMapping="true"
+				x="128"
+				y="117"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="97288313-2c19-44e2-a8ee-a442e3bb3cb9"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>.*\.([^.]+)</from>
+				<to>match</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3dd03167-9028-4272-a7ac-eaff832d92b5"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>$1</from>
+				<to>replace</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c3b9baef-10f7-4c84-a36e-8f0dada670ce"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>true</from>
+				<to>useRegex</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b5649b0e-d552-4dbe-9362-3c90cbfabdbf"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/typeId</from>
+				<to>content</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="70cf166b-90ba-4407-8ff1-15c31b66a021"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result0eca02b57b3641259fda7da68b881273/content</from>
+			<to>output/entitySet</to>
+		</steps>
+	</steps>
+</sequence>

@@ -1,0 +1,4 @@
+Based on a description found here: https://vjcity.blogspot.com/2020/06/how-to-get-specific-page-number-in.html
+It seems to use a feature from fetchxml: https://learn.microsoft.com/en-us/power-apps/developer/data-platform/org-service/page-large-result-sets-with-fetchxml
+
+It is not clear how stable this solution is.

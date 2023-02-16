@@ -1,0 +1,269 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="92b85b9d-2a1e-43cc-af3c-1cfc2ffa9d2d"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+			comment="If we have a skip, we have to rewrite it, it doesn't work"
+			disabled="false"
+			id="f8ecbf42-bdfc-4a33-8b9e-36b52aceff11"
+			label="input/request/target ~ &quot;.*\?.*\$skip=.*&quot;"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Get the skip and top amounts"
+				disabled="false"
+				id="a4131bdf-9f25-4be4-9c50-4371a35eba3c"
+				lineNumber="3">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="9264c6bb-676e-496f-8a68-d08136c2eb7e"
+					serviceId="nabu.utils.String.replace"
+					resultName="result76af1b0177f747e4a9846d291f043975"
+					temporaryMapping="true"
+					x="11"
+					y="25"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="ffc206b1-c25e-4b3e-9308-7c6444457fd7"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/request/target</from>
+					<to>content</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="0cb978db-feed-4134-823f-f351a79ca248"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>.*\?.*\$skip=([0-9]+).*</from>
+					<to>match</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4c8c7b81-fef1-4045-99b1-36ee6c561d65"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>$1</from>
+					<to>replace</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="f59e2e18-c3c4-4f88-906c-9f4ebfaf3027"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>true</from>
+					<to>useRegex</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="33032c34-41de-4c8e-8de1-785a24182263"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result76af1b0177f747e4a9846d291f043975/content</from>
+				<to>skipAmount</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="c1dcb903-62f5-4b3b-9edc-ece3f02db0d5"
+					serviceId="nabu.utils.String.replace"
+					resultName="result65ae27bc3627479aad8bdbf125c2f2ac"
+					temporaryMapping="true"
+					x="20"
+					y="177"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="ed18d9f3-51f4-475c-82e3-ffa73babaced"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/request/target</from>
+					<to>content</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4fae57ea-56bc-435f-99d4-9ff799a855d9"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>.*\?.*\$top=([0-9]+).*</from>
+					<to>match</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="04aedfe4-7602-42db-89db-dfcfe71c2db8"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>$1</from>
+					<to>replace</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="1d90fe66-024f-4dc7-8cfd-dfa64031d169"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>true</from>
+					<to>useRegex</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e8877cc1-0a21-4f5f-932d-b9fae2b6fd08"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result65ae27bc3627479aad8bdbf125c2f2ac/content</from>
+				<to>topAmount</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Calculate the page number"
+				disabled="false"
+				id="1b1efb3e-1c1a-4335-ab66-89933b31cc61"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e4785b07-8755-4510-abcf-592890e72d75"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>=skipAmount / topAmount</from>
+				<to>page</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Page is 1-based"
+				disabled="false"
+				id="8f61a81b-ad8d-4e24-822f-1223f04aed58"
+				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2be3aa11-e46d-4255-93d3-3f22edfadabe"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>=page + 1</from>
+				<to>page</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Construct cookie part with encoding"
+				disabled="false"
+				id="894ff909-908f-4f0e-950b-48f4636e1dcd"
+				lineNumber="6">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="fa24f5f7-f8ab-4714-94de-b145cd5e55df"
+					serviceId="nabu.utils.Uri.encodeUriComponent"
+					resultName="result6dc1b2645cd64bc698b0bfe55d1e942f"
+					temporaryMapping="true"
+					x="83"
+					y="32"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="ff35b7bd-da1f-41d3-a07c-9fd7cab1269c"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>="&lt;cookie pagenumber='" + page + "'&gt;"</from>
+					<to>component</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="ed9368a4-32af-4a8d-bbdd-009801e6563b"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>false</from>
+					<to>includeEncoded</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="181922ea-1900-4b06-964a-d818377ebd3f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result6dc1b2645cd64bc698b0bfe55d1e942f/component</from>
+				<to>encoded</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="78b6ea63-4437-4416-9339-65650f8c5825"
+				lineNumber="7">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="0bdce96d-7546-4d6e-a876-80ef6fc7a456"
+					serviceId="nabu.utils.String.replace"
+					resultName="resultb830e4592dab4d089cd411663541f04b"
+					temporaryMapping="true"
+					x="38"
+					y="80"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="b0698e00-5b96-4c91-b80c-6999b2fa2cd1"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/request/target</from>
+					<to>content</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="c81485c0-ac59-417c-8b8a-54192894c48b"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>(.*\?.*\$skip)=[0-9]+(.*)</from>
+					<to>match</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="bc48d82e-d39b-4ccc-9b75-2767fb40f5e4"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>="$1token=" + encoded + "$2"</from>
+					<to>replace</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="f996025d-7f3c-4ede-9b10-c43e072e5e7e"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>true</from>
+					<to>useRegex</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c364970f-f961-45b1-914f-ab89dc9add02"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultb830e4592dab4d089cd411663541f04b/content</from>
+				<to>input/request/target</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>
