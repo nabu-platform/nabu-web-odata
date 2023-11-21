@@ -2,17 +2,22 @@
 		disabled="false"
 		id="92b85b9d-2a1e-43cc-af3c-1cfc2ffa9d2d"
 		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="89b4fa57394149c48b77f4bbb96bd6de"
+			lineNumber="2">
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 			comment="If we have a skip, we have to rewrite it, it doesn't work"
 			disabled="false"
 			id="f8ecbf42-bdfc-4a33-8b9e-36b52aceff11"
 			label="input/request/target ~ &quot;.*\?.*\$skip=.*&quot;"
-			lineNumber="2">
+			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				comment="Get the skip and top amounts"
 				disabled="false"
 				id="a4131bdf-9f25-4be4-9c50-4371a35eba3c"
-				lineNumber="3">
+				lineNumber="4">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="9264c6bb-676e-496f-8a68-d08136c2eb7e"
@@ -132,7 +137,7 @@
 				comment="Calculate the page number"
 				disabled="false"
 				id="1b1efb3e-1c1a-4335-ab66-89933b31cc61"
-				lineNumber="4">
+				lineNumber="5">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="e4785b07-8755-4510-abcf-592890e72d75"
@@ -147,7 +152,7 @@
 				comment="Page is 1-based"
 				disabled="false"
 				id="8f61a81b-ad8d-4e24-822f-1223f04aed58"
-				lineNumber="5">
+				lineNumber="6">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="2be3aa11-e46d-4255-93d3-3f22edfadabe"
@@ -162,7 +167,7 @@
 				comment="Construct cookie part with encoding"
 				disabled="false"
 				id="894ff909-908f-4f0e-950b-48f4636e1dcd"
-				lineNumber="6">
+				lineNumber="7">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="fa24f5f7-f8ab-4714-94de-b145cd5e55df"
@@ -206,7 +211,7 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="78b6ea63-4437-4416-9339-65650f8c5825"
-				lineNumber="7">
+				lineNumber="8">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="0bdce96d-7546-4d6e-a876-80ef6fc7a456"

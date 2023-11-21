@@ -4,4 +4,8 @@
     <field maxOccurs="unbounded" minOccurs="0" name="values" type="java.lang.String"/>
     <field minOccurs="0" name="formatted" type="java.lang.String"/>
     <field minOccurs="0" name="key" type="java.lang.String"/>
+    <structure definition="nabu.utils.types.UriComponents" minOccurs="0" name="components"/>
+    <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="properties"/>
+    <structure definition="be.nabu.libs.types.api.KeyValuePair" minOccurs="0" name="filter"/>
+    <field name="query" type="java.lang.String"/>
 </structure>

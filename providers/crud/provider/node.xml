@@ -2,7 +2,10 @@
 <node artifactManager="be.nabu.eai.module.services.crud.provider.CRUDProviderManager" created="2020-02-09T16:12:08.558+01:00" lastModified="2022-10-09T10:52:03.335+02:00" leaf="true" version="25">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
-    <properties/>
+    <locked>false</locked>
+    <properties>
+        <property key="crudProvider">odata</property>
+    </properties>
     <references>nabu.web.odata.providers.crud.configuration</references>
     <references>nabu.web.odata.providers.crud.create</references>
     <references>nabu.web.odata.providers.crud.delete</references>
