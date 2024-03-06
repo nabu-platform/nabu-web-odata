@@ -216,7 +216,8 @@
 			id="2c156013-7ff6-421f-9de5-54140d1b2331"
 			label="!primaryKey"
 			lineNumber="8"
-			message="No primary key found" xsi:nil="true"/>
+			message="No primary key found"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="New input instance for the service"
 			disabled="false"
@@ -335,7 +336,7 @@
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="3c84d98a-f067-46e7-aeca-70bfbee47976"
+					id="fed0870349ea41d2973c3c8bb978ff1b"
 					mask="false"
 					optional="false"
 					fixedValue="false">

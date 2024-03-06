@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-10-09T10:14:37.404+02:00" lastModified="2022-10-14T10:52:56.140+02:00" leaf="true" version="12">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-10-09T10:14:37.404+02:00" lastModified="2024-03-04T13:57:25.346+01:00" leaf="true" version="15">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>be.nabu.eai.module.services.crud.provider.CRUDMeta</references>
     <references>nabu.utils.reflection.Service.invoke</references>
+    <references>nabu.utils.reflection.Type.of</references>
     <references>be.nabu.eai.module.services.crud.api.CRUDProvider.create</references>
     <references>nabu.utils.types.ParameterDescription</references>
     <references>nabu.utils.reflection.Type.set</references>
@@ -16,4 +18,5 @@
     <references>java.lang.Object</references>
     <references>java.lang.String</references>
     <references>nabu.utils.reflection.Type.mask</references>
+    <references>nabu.utils.reflection.Type.get</references>
 </node>
