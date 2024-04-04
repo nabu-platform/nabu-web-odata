@@ -16,6 +16,15 @@
 			<from>input/configuration</from>
 			<to>configuration</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ec9a54ad377b43f899e639acb6b339d7"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/instance</from>
+			<to>originalInstance</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 			disabled="false"
@@ -495,11 +504,11 @@
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="3d642ec7e1ed4bf194793e5353d03206"
+					id="75f0b227c6ba4e0f8b02cdf1135739d9"
 					mask="false"
 					optional="false"
 					fixedValue="false">
-				<from>input/instance</from>
+				<from>originalInstance</from>
 				<to>typeInstance</to>
 			</steps>
 		</steps>
