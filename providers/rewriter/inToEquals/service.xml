@@ -912,7 +912,7 @@
 						mask="false"
 						optional="false"
 						fixedValue="true">
-					<from>[\s]*(.+)?\bin\b.*?\([^)]+\).*</from>
+					<from>.*?[\s]*([\w]+)[\s]*\bin\b.*?\([^)]+\).*</from>
 					<to>match</to>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -1018,7 +1018,7 @@
 						mask="false"
 						optional="false"
 						fixedValue="true">
-					<from>([\s]*).+?\bin\b.*?\([^)]+\)(.*)</from>
+					<from>="(.*?)" + key + "[\s]*\bin\b[\s]*\([^)]+\)(.*)"</from>
 					<to>match</to>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
